@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.9.19)  21 OCT 2023 17:16
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.9.19)  21 OCT 2023 17:32
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1265,112 +1265,111 @@ Chapter 1.
 
 ]
 Chapter 2.
-[3
-
-{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
-<./images/realitykit.png, id=112, 585.68813pt x 377.91188pt>
+<./images/realitykit.png, id=104, 585.68813pt x 377.91188pt>
 File: ./images/realitykit.png Graphic file (type png)
 <use ./images/realitykit.png>
-Package pdftex.def Info: ./images/realitykit.png  used on input line 52.
+Package pdftex.def Info: ./images/realitykit.png  used on input line 48.
 (pdftex.def)             Requested size: 474.64801pt x 306.27417pt.
- [4 <./images/realitykit.png>] [5]
+[3
+
+] [4 <./images/realitykit.png>]
 Chapter 3.
-Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 92.
-LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 93.
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 77.
+LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 78.
 (/usr/local/texlive/2023/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2023/04/13 v2.5m Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 93.
- [6
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 78.
+ [5
 
-] [7]
-LaTeX Font Info:    Trying to load font information for OML+cmr on input line 156.
+] [6{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
+LaTeX Font Info:    Trying to load font information for OML+cmr on input line 141.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/base/omlcmr.fd
 File: omlcmr.fd 2023/04/13 v2.5m Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 156.
- [8]
-Overfull \hbox (294.04999pt too wide) in paragraph at lines 178--180
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 141.
+ [7]
+Overfull \hbox (294.04999pt too wide) in paragraph at lines 163--165
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (83.8078pt too wide) in paragraph at lines 180--181
+Overfull \hbox (83.8078pt too wide) in paragraph at lines 165--166
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (11.53705pt too wide) in paragraph at lines 183--184
+Overfull \hbox (11.53705pt too wide) in paragraph at lines 168--169
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (116.65814pt too wide) in paragraph at lines 184--186
+Overfull \hbox (116.65814pt too wide) in paragraph at lines 169--171
 [][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (90.37787pt too wide) in paragraph at lines 186--187
+Overfull \hbox (90.37787pt too wide) in paragraph at lines 171--172
 [][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (129.79828pt too wide) in paragraph at lines 187--189
+Overfull \hbox (129.79828pt too wide) in paragraph at lines 172--174
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (96.94794pt too wide) in paragraph at lines 190--193
+Overfull \hbox (96.94794pt too wide) in paragraph at lines 175--178
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-[9] [10]
+[8] [9]
 Chapter 4.
-<./images/front.jpeg, id=225, 831.105pt x 1798.72pt>
+<./images/front.jpeg, id=218, 831.105pt x 1798.72pt>
 File: ./images/front.jpeg Graphic file (type jpg)
 <use ./images/front.jpeg>
-Package pdftex.def Info: ./images/front.jpeg  used on input line 209.
+Package pdftex.def Info: ./images/front.jpeg  used on input line 194.
 (pdftex.def)             Requested size: 166.21805pt x 359.73763pt.
-<./images/side.jpeg, id=226, 831.105pt x 1798.72pt>
+<./images/side.jpeg, id=219, 831.105pt x 1798.72pt>
 File: ./images/side.jpeg Graphic file (type jpg)
 <use ./images/side.jpeg>
-Package pdftex.def Info: ./images/side.jpeg  used on input line 217.
+Package pdftex.def Info: ./images/side.jpeg  used on input line 202.
 (pdftex.def)             Requested size: 166.21805pt x 359.73763pt.
-<./images/top.jpeg, id=227, 831.105pt x 1798.72pt>
+<./images/top.jpeg, id=220, 831.105pt x 1798.72pt>
 File: ./images/top.jpeg Graphic file (type jpg)
 <use ./images/top.jpeg>
-Package pdftex.def Info: ./images/top.jpeg  used on input line 225.
+Package pdftex.def Info: ./images/top.jpeg  used on input line 210.
 (pdftex.def)             Requested size: 166.21805pt x 359.73763pt.
-[11
+[10
 
  <./images/front.jpeg>]
-<./images/selector.jpeg, id=233, 831.105pt x 1798.72pt>
+<./images/selector.jpeg, id=226, 831.105pt x 1798.72pt>
 File: ./images/selector.jpeg Graphic file (type jpg)
 <use ./images/selector.jpeg>
-Package pdftex.def Info: ./images/selector.jpeg  used on input line 237.
+Package pdftex.def Info: ./images/selector.jpeg  used on input line 222.
 (pdftex.def)             Requested size: 166.21805pt x 359.73763pt.
-<./images/megerosites.jpeg, id=234, 831.105pt x 1798.72pt>
+<./images/megerosites.jpeg, id=227, 831.105pt x 1798.72pt>
 File: ./images/megerosites.jpeg Graphic file (type jpg)
 <use ./images/megerosites.jpeg>
-Package pdftex.def Info: ./images/megerosites.jpeg  used on input line 245.
+Package pdftex.def Info: ./images/megerosites.jpeg  used on input line 230.
 (pdftex.def)             Requested size: 166.21805pt x 359.73763pt.
-<./images/not_available.jpeg, id=235, 831.105pt x 1798.72pt>
+<./images/not_available.jpeg, id=228, 831.105pt x 1798.72pt>
 File: ./images/not_available.jpeg Graphic file (type jpg)
 <use ./images/not_available.jpeg>
-Package pdftex.def Info: ./images/not_available.jpeg  used on input line 253.
+Package pdftex.def Info: ./images/not_available.jpeg  used on input line 238.
 (pdftex.def)             Requested size: 166.21805pt x 359.73763pt.
- [12 <./images/side.jpeg>] [13 <./images/top.jpeg>] [14 <./images/selector.jpeg>] [15 <./images/megerosites.jpeg>] [16 <./images/not_available.jpeg>]
+ [11 <./images/side.jpeg>] [12 <./images/top.jpeg>] [13 <./images/selector.jpeg>] [14 <./images/megerosites.jpeg>] [15 <./images/not_available.jpeg>]
 Chapter 5.
-[17
+[16
 
 ]
-Overfull \hbox (2.95491pt too wide) in paragraph at lines 273--274
+Overfull \hbox (2.95491pt too wide) in paragraph at lines 258--259
 []\OT1/cmr/m/n/10.95 TechTarget - Ama-zon Web Ser-vices: https://www.techtarget.com/searchaws/definition/Amazon-
  []
 
-[18
+[17
 
 ] (./documentation.aux)
  ***********
@@ -1386,10 +1385,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 37194 strings out of 474934
- 747131 string characters out of 5759811
+ 37187 strings out of 474934
+ 747012 string characters out of 5759811
  1960791 words of memory out of 5000000
- 57939 multiletter control sequences out of 15000+600000
+ 57934 multiletter control sequences out of 15000+600000
  584933 words of font info for 111 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,7n,102p,931b,1875s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1451,10 +1450,10 @@ pdfTeX warning (dest): name{https://developer.apple.com/augmented-reality/} has 
 pdfTeX warning (dest): name{https://www.techtarget.com/searchaws/definition/Amazon-Web-Services} has been referenced but does not exist, replaced by a fixed one
 
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb>
-Output written on documentation.pdf (19 pages, 1421100 bytes).
+Output written on documentation.pdf (18 pages, 1417694 bytes).
 PDF statistics:
- 435 PDF objects out of 1000 (max. 8388607)
- 343 compressed objects within 4 object streams
- 140 named destinations out of 1000 (max. 500000)
- 312 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 423 PDF objects out of 1000 (max. 8388607)
+ 333 compressed objects within 4 object streams
+ 138 named destinations out of 1000 (max. 500000)
+ 304 words of extra memory for PDF output out of 10000 (max. 10000000)
 

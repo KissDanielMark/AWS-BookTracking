@@ -2,15 +2,14 @@
 \contentsline {chapter}{\numberline {2}Current techologies}{3}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Amazon Simple Storage Service (S3)}{3}{section.2.1}%
 \contentsline {section}{\numberline {2.2}Amazon RDS (Relational Database Service)}{3}{section.2.2}%
-\contentsline {section}{\numberline {2.3}Amazon DynamoDB}{5}{section.2.3}%
-\contentsline {section}{\numberline {2.4}AWS Lambda}{5}{section.2.4}%
-\contentsline {section}{\numberline {2.5}AWS CodeCommit}{5}{section.2.5}%
-\contentsline {chapter}{\numberline {3}Development}{6}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Overview}{6}{section.3.1}%
-\contentsline {section}{\numberline {3.2}APILayer Rest API}{6}{section.3.2}%
-\contentsline {section}{\numberline {3.3}SwiftUI}{6}{section.3.3}%
-\contentsline {section}{\numberline {3.4}ARKit and RealityKit}{8}{section.3.4}%
-\contentsline {chapter}{\numberline {4}Presentation of finished work}{11}{chapter.4}%
-\contentsline {chapter}{\numberline {5}Sources}{17}{chapter.5}%
-\contentsline {section}{\numberline {5.1}External Links}{17}{section.5.1}%
+\contentsline {section}{\numberline {2.3}Amazon DynamoDB}{3}{section.2.3}%
+\contentsline {section}{\numberline {2.4}AWS Lambda}{3}{section.2.4}%
+\contentsline {section}{\numberline {2.5}AWS CodeCommit}{3}{section.2.5}%
+\contentsline {chapter}{\numberline {3}Development}{5}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Overview}{5}{section.3.1}%
+\contentsline {section}{\numberline {3.2}APILayer Rest API}{5}{section.3.2}%
+\contentsline {section}{\numberline {3.3}SwiftUI}{5}{section.3.3}%
+\contentsline {section}{\numberline {3.4}ARKit and RealityKit}{7}{section.3.4}%
+\contentsline {chapter}{\numberline {4}Presentation of finished work}{10}{chapter.4}%
+\contentsline {chapter}{\numberline {5}Sources}{16}{chapter.5}%
 \contentsfinish 
