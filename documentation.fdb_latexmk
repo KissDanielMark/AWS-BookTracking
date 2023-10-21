@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1697902345 "/Users/kissdanielmark/Documents/01.Iskola/MSc/2/Onalb2/Dokumentacio/documentation.tex" "documentation.pdf" "documentation" 1697902348 0
-  "/Users/kissdanielmark/Documents/01.Iskola/MSc/2/Onalb2/Dokumentacio/documentation.tex" 1697902341 14945 6bf663025e49c16c4daae0916a8f729a ""
+["pdflatex"] 1697906702 "/Users/kissdanielmark/Documents/01.Iskola/MSc/2/Onalb2/Dokumentacio/documentation.tex" "documentation.pdf" "documentation" 1697906705 0
+  "/Users/kissdanielmark/Documents/01.Iskola/MSc/2/Onalb2/Dokumentacio/documentation.tex" 1697906700 21486 42b1870398f58ba58e30fe84980daa69 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/jknappen/ec/tcrm1095.tfm" 1136768653 1536 02c06700a42be0f5a28664c7273f82e7 ""
@@ -258,13 +258,12 @@
   "/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1695131729 4681924 2c19acd65d59ba67d808d6d74d1273b0 ""
   "/usr/local/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt" 1695131809 8183250 a45239d28e72dbadff62b48fda1e9ffa ""
   "/usr/local/texlive/2023/texmf.cnf" 1678822455 577 1b2b1af17af2508fb20dd85783af4050 ""
-  "documentation.aux" 1697902348 9802 079a2e319b7521ef259a4dd2bf8783f4 "pdflatex"
-  "documentation.tex" 1697902341 14945 6bf663025e49c16c4daae0916a8f729a ""
-  "documentation.toc" 1697902348 1082 c773bfdd57e4653bfc8e0ffe0bd89c9f "pdflatex"
+  "documentation.aux" 1697906705 10429 4b1d8a94a0f6b2010ba2d098bf101e5a "pdflatex"
+  "documentation.tex" 1697906700 21486 42b1870398f58ba58e30fe84980daa69 ""
+  "documentation.toc" 1697906705 1193 54c9046efb938c783c08f0d81ee98b97 "pdflatex"
   "images/front.jpeg" 1684911654 164804 02785984e3d4c0e517c6a51be1f487c7 ""
   "images/megerosites.jpeg" 1684911654 192733 707dbf5d7fe4f97e97cd8d60335f5d76 ""
   "images/not_available.jpeg" 1684911654 178567 bcd3c345b9138afcb978bb2e7b376ab1 ""
-  "images/realitykit.png" 1684911654 36137 c641b54e638bacba8681f2beb71255e6 ""
   "images/selector.jpeg" 1684911654 185021 96cd0f542d072d6ac3f40046933a1e91 ""
   "images/side.jpeg" 1684911654 264591 873a72ab2b2787515467eb95483e483c ""
   "images/top.jpeg" 1684911654 243881 1525233ace4e3857dbacda8c9df3fe14 ""

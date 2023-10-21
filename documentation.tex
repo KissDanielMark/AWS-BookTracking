@@ -22,15 +22,35 @@ Amazon Web Services (AWS) is a comprehensive cloud computing platform provided b
 Amazon launched its first web services in 2002 from the internal infrastructure that Amazon.com built to handle its online retail operations. In 2006, it began offering its defining IaaS services. AWS was one of the first companies to introduce a pay-as-you-go cloud computing model that scales to provide users with compute, storage or throughput as needed.
 AWS is separated into different services; each can be configured in different ways based on the user's needs. Users can see configuration options and individual server maps for an AWS service. AWS provides a scalable and flexible environment for businesses to build, deploy, and manage applications and services. It offers a pay-as-you-go pricing model, which means users only pay for the resources they consume, making it cost-effective and efficient for a wide range of use cases. \cite{techtagaws}
 
-\chapter{Current techologies}
+\chapter{Current AWS features and techologies}
 
 Before I started the development of the application I have done a course provided by Amazon. It conatains a 14 module class where they teache the fundamentals of AWS.
 It was roughly 5 weeks for me to finish and complete all laboratory exercises and module closing quiz. Throughout the course I have familiarised myself with the different AWS services and theoretical background. It proved to be a good repetition for my previous knowledge like REST API.
 
+
+\section{Amazon Elastic Compute Cloud (EC2)}
+
+This service provides resizable compute capacity in the cloud, allowing users to run virtual servers, known as "instances," for various computing tasks.
+Key features:
+\begin{enumerate}
+  \item Scalability: EC2 instances can be quickly scaled up or down based on demand. This means that users can add or remove instances to match the needs of their applications or workloads.
+  \item Variety of Instance Types: EC2 offers a wide range of instance types optimized for different use cases. These include instances optimized for compute-intensive workloads, memory-intensive tasks, storage-optimized applications, and more.
+  \item Operating System Flexibility: Users can choose from a variety of operating systems, including various Linux distributions, Microsoft Windows, and others, to run on their EC2 instances.
+\end{enumerate}
 \section{Amazon Simple Storage Service (S3)}
 
-...
-
+S3 offers scalable object storage for storing and retrieving data. It is commonly used for data backup, hosting static websites, and as a storage backend for applications.
+Amazon S3 is designed to provide durability, availability, and scalability at a low cost.
+Key features:
+\begin{enumerate}
+  \item Object Storage: Amazon S3 stores data as objects, which consist of a file and its associated metadata. Each object is identified by a unique key, making it easy to access and manage.
+  \item Buckets: A bucket is a container for objects stored in Amazon S3. Buckets act as top-level folders or directories for organizing and managing objects. Each bucket has a unique name and is associated with a specific AWS region.
+  \item Durability and Availability: Amazon S3 is designed to provide 99.999999999% (11 9's) durability for objects over a given year. It achieves this by replicating data across multiple Availability Zones within a region, ensuring high availability.
+  \item Scalability: Amazon S3 can scale to accommodate virtually unlimited amounts of data. Users can easily upload, store, and retrieve any amount of data, making it suitable for a wide range of use cases.
+  \item ccess Control: Users can control access to their buckets and objects through AWS Identity and Access Management (IAM) policies, bucket policies, Access Control Lists (ACLs), and signed URLs or cookies.
+  \item Cross-Region Replication: Users can configure Amazon S3 to automatically replicate objects from one bucket to another in a different AWS region. This helps achieve geographic redundancy and compliance with data residency requirements.
+  \item Static Website Hosting: Amazon S3 can be used to host static websites, providing a cost-effective solution for hosting web content.
+\end{enumerate}
 %\begin{itemize}
 %  \item Device tracking
 %  \item Raycast
@@ -41,27 +61,48 @@ It was roughly 5 weeks for me to finish and complete all laboratory exercises an
 
 \section{Amazon RDS (Relational Database Service)}
 
-...
+RDS offers managed database services for various database engines, including MySQL, PostgreSQL, Oracle, and Microsoft SQL Server.
+Key features:
+\begin{enumerate}
+  \item Managed Service: AWS handles the heavy lifting of database administration tasks such as hardware provisioning, database setup, configuration, patch management, and backups. This allows users to focus on application development rather than database management.
+\end{enumerate}
 
-\begin{figure}[!ht]
-  \centering
-  \includegraphics[width=\textwidth]{realitykit.png}
-  % \includegraphics[width=150mm, keepaspectratio]{figures/TeXnicCenter.png }
-  \caption{RealityKit and ARKit usage.}
-  \label{fig:TexnicCenter}
-\end{figure}
+%\begin{figure}[!ht]
+%  \centering
+%  \includegraphics[width=\textwidth]{realitykit.png}
+% \includegraphics[width=150mm, keepaspectratio]{figures/TeXnicCenter.png }
+%  \caption{RealityKit and ARKit usage.}
+%  \label{fig:TexnicCenter}
+%\end{figure}
 
 \section{Amazon DynamoDB}
 
-...
-
+A fully-managed NoSQL database service that provides high performance and seamless scalability for applications that require low-latency access to data.
+\begin{enumerate}
+  \item NoSQL Database: DynamoDB is a NoSQL database, which means it does not rely on a fixed schema like traditional relational databases. This allows for flexible data modeling, making it well-suited for applications with evolving data structures.
+  \item Managed Service: AWS handles all the operational aspects of DynamoDB, including hardware provisioning, setup, configuration, and maintenance. This frees developers from the burden of database management tasks.
+  \item Scalability: DynamoDB is designed to scale easily, both in terms of read and write throughput. It can handle massive volumes of traffic and automatically scales based on demand. Users can adjust read and write capacity units to accommodate their application's needs.
+\end{enumerate}
 \section{AWS Lambda}
 
-...
+This service allows users to run code without provisioning or managing servers. It executes code in response to specific events, making it a key component of serverless architecture.
+\begin{enumerate}
+  \item Serverless Architecture: Lambda is a serverless computing service, which means developers do not need to manage the underlying servers. Instead, they write code and AWS handles the execution and scaling of that code.
+  \item Event-Driven Model: Lambda functions are triggered by events such as changes to data in an Amazon S3 bucket, updates to a DynamoDB table, or incoming HTTP requests via Amazon API Gateway. This event-driven model allows for real-time responses to changes in the environment.
+  \item Supported Runtimes: AWS Lambda supports multiple programming languages including Node.js, Python, Java, Go, Ruby, .NET Core, and custom runtimes. This flexibility enables developers to use their preferred programming language.
+  \item Pay-per-Use Pricing: With AWS Lambda, users pay only for the compute time consumed by their code. There is no charge when code is not running. This pricing model can lead to cost savings compared to traditional server-based architectures.
+\end{enumerate}
 
 \section{AWS CodeCommit}
+AWS CodeCommit is a fully managed source control service provided by Amazon Web Services (AWS). It is a secure and scalable Git-based repository hosting service designed to help teams collaborate on code development and version control. CodeCommit provides a secure and reliable platform for storing and managing code repositories.
 
-...
+Key features:
+\begin{enumerate}
+  \item Git Repository Hosting: CodeCommit supports the Git version control system, providing a familiar interface for developers to manage their code repositories.
+  \item Secure and Private: CodeCommit repositories are secure by default and can be configured to be private. Access control policies, AWS Identity and Access Management (IAM) permissions, and encryption options ensure the confidentiality and integrity of code.
+  \item Integration with AWS Services: CodeCommit seamlessly integrates with other AWS services, such as AWS CodePipeline, AWS CodeBuild, AWS CodeDeploy, AWS CloudFormation, and more. This enables end-to-end continuous integration and continuous deployment (CI/CD) workflows.
+  \item Version Control: CodeCommit allows multiple developers to collaborate on projects by providing version control capabilities. Developers can create branches, merge code changes, and track commit history.
+\end{enumerate}
 
 
 \chapter{Development}

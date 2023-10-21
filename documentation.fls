@@ -469,10 +469,6 @@ INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmcsc10.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
 OUTPUT documentation.toc
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
-INPUT ./images/realitykit.png
-INPUT ./images/realitykit.png
-INPUT ./images/realitykit.png
-INPUT ./images/realitykit.png
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmr8.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmr6.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/newpx/zplmi.tfm
