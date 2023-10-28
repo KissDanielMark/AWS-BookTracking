@@ -1,0 +1,13 @@
+{
+  "books": [
+    {
+      "isbn": "LOCAL_A123456",
+      "title": "LOCAL_Test Book"
+    },
+    {
+      "pages": 300,
+      "isbn": "LOCAL_D12345",
+      "title": "LOCAL_The Book - Vol.2"
+    }
+  ]
+}

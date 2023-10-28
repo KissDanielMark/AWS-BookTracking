@@ -1,46 +1,69 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Book Tracking</title>
-        <meta charset="utf-8">
-        <!-- Latest compiled and minified CSS -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-        <!-- jQuery library -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-        <!-- Latest compiled JavaScript -->
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-        
-        <link rel="stylesheet" href="/css/style.css">
-    </head>
-    <body>
-        <h1>
-           Book Tracking Online.
-        </h1>
-        
-        <!--<button type="button" onclick="myFunction()">Download DB!</button>-->
-        
-        
-            
-        <div class="container mt-5 mb-3">
-            <div class="row">
-                <section data-role="browse_coffee_content">
-                </section>
-            </div>
+  <head>
+    <title>Book Tracking</title>
+    <meta charset="utf-8" />
+    <!-- Latest compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <link href="/css/style.css" />
+  </head>
+  <body>
+    <h1 style="width: 500px; margin: 0 auto; text-align: center">
+      Book Tracking Online.
+    </h1>
+    <!--<button type="button" onclick="myFunction()">Download DB!</button>-->
+    <div class="container mt-5 mb-3">
+      <div class="row">
+        <section data-role="browse_coffee_content"></section>
+      </div>
+    </div>
+
+    <form style="width: 500px; margin: 0 auto">
+      <!-- Email input -->
+      <div class="form-outline mb-4">
+        <label class="form-label" for="form2Example1">Username</label>
+        <input type="email" id="form2Example1" class="form-control" />
+      </div>
+
+      <!-- Password input -->
+      <div class="form-outline mb-4">
+        <label class="form-label" for="form2Example2">Password</label>
+        <input type="password" id="form2Example2" class="form-control" />
+      </div>
+      <!-- Submit button -->
+      <button
+        type="button"
+        class="btn btn-primary btn-block mb-4"
+        style="margin-top: 20px; margin-bottom: 20px"
+      >
+        Sign in
+      </button>
+    </form>
+
+    <footer>
+      <!-- Copyrights -->
+      <div class="bg-light py-4">
+        <div class="container text-center">
+          <p class="text-muted mb-0 py-2">
+            © 2023 Kiss Daniel Mark All rights reserved.
+          </p>
         </div>
-        <footer>
-            <!-- Copyrights -->
-            <div class="bg-light py-4">
-              <div class="container text-center">
-                <p class="text-muted mb-0 py-2">© 2023 Kiss Daniel Mark All rights reserved.</p>
-              </div>
-            </div>
-        </footer>
-        
-        <script src="config.js"></script>
-		<script src="scripts/jquery-3.6.0.min.js"></script>
-		<script src="scripts/main.js"></script>
-		<script src="scripts/navigation.js"></script>
-		<script src="scripts/pastries.js"></script>
-		<script src="scripts/book.js"></script>
-    </body>
+      </div>
+    </footer>
+
+    <script src="config.js"></script>
+    <script src="scripts/jquery-3.6.0.min.js"></script>
+    <script src="scripts/main.js"></script>
+    <script src="scripts/navigation.js"></script>
+    <script src="scripts/pastries.js"></script>
+    <script src="scripts/book.js"></script>
+  </body>
 </html>
