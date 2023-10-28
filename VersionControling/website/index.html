@@ -19,13 +19,21 @@
       Book Tracking Online.
     </h1>
     <!--<button type="button" onclick="myFunction()">Download DB!</button>-->
-    <div class="container mt-5 mb-3">
+    <div id="konyvek" class="container mt-5 mb-3">
       <div class="row">
         <section data-role="browse_coffee_content"></section>
       </div>
+      <button
+        type="button"
+        class="btn btn-primary btn-block mb-4"
+        style="margin-top: 20px; margin-bottom: 20px"
+        onclick="MAIN.logOut()"
+      >
+        Log out
+      </button>
     </div>
 
-    <form style="width: 500px; margin: 0 auto">
+    <form id="loginOldal" style="width: 500px; margin: 0 auto">
       <!-- Email input -->
       <div class="form-outline mb-4">
         <label class="form-label" for="form2Example1">Username</label>
@@ -42,6 +50,7 @@
         type="button"
         class="btn btn-primary btn-block mb-4"
         style="margin-top: 20px; margin-bottom: 20px"
+        onclick="MAIN.attemptLogin()"
       >
         Sign in
       </button>

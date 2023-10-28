@@ -1,15 +1,17 @@
 var BOOKs = (function () {
-  var expose = {},
+  var expose = {
+      loadItems: loadItems,
+      reset: reset,
+    },
     hide = {
       handleNoSupplierSetUpYet: handleNoSupplierSetUpYet,
-      loadItems: loadItems,
       printItems: printItems,
       printItems_other: printItems_other,
     };
 
   (function init() {
     console.log("book.js init()");
-    loadItems();
+    //loadItems();
   })();
 
   function loadItems() {
@@ -29,6 +31,10 @@ var BOOKs = (function () {
     } else {
       $.get("all_products.json", printItems);
     }
+  }
+
+  function reset() {
+    $("[data-role='browse_coffee_content']").empty();
   }
 
   function handleNoSupplierSetUpYet(msg_str) {
