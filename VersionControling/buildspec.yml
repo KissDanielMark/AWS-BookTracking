@@ -1,0 +1,23 @@
+version: 0.2
+
+phases:
+  #install:
+  #  runtime-versions:
+  #    nodejs: 12
+  #pre_build:
+  #  commands:
+  #    - echo "Installing dependencies..."
+  #    - npm install
+  #build:
+  #  commands:
+  #    - echo "Building application..."
+  #    - npm run build
+  post_build:
+    commands:
+      - echo "Running post-build tasks...(copy)"
+      - aws s3 sync dist/ s3://wp871q-s3bucket/
+      - echo "Deployment Complete!"
+
+artifacts:
+  files:
+    - '**/*'

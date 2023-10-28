@@ -1,0 +1,33 @@
+create record: 
+aws dynamodb put-item \
+--table-name bookshelf \
+--item file://not_an_existing_book.json \
+--region eu-north-1
+
+copy everything:
+aws s3 cp ~/environment/VersionControling/website s3://wp871q-s3bucket/ --recursive --cache-control "max-age=0"
+
+aws ecr docker auth:
+aws ecr get-login-password \
+--region eu-north-1 | docker login --username AWS \
+--password-stdin 554751627586.dkr.ecr.eu-north-1.amazonaws.com
+
+aws ecr:
+aws ecr get-login-password --region eu-north-1 | docker login --username AWS --password-stdin 554751627586.dkr.ecr.eu-north-1.amazonaws.com
+
+docker tag the deployment target:
+docker tag node_app:latest 554751627586.dkr.ecr.eu-north-1.amazonaws.com/node-app:latest
+
+docker push to repo:
+docker push 554751627586.dkr.ecr.eu-north-1.amazonaws.com/node-app:latest
+
+Lab8.2???
+
+Cloud9 VPC ID: vpc-02168f22f22ce86f2
+Cloud9 Availability Zone:
+Cloud9 subnet ID:
+extraSubnetForRds subnet ID:
+Cloud9 security group ID:
+Database endpoint:
+Repository URI(ECR-docket ide van feltoltve): 554751627586.dkr.ecr.eu-north-1.amazonaws.com/node-app
+Elastic Beanstalk URL:
