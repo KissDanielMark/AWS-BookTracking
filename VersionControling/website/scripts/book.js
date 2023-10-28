@@ -63,12 +63,13 @@ var BOOKs = (function () {
       html_str += "</h6><span> Started: ";
       html_str += o.date_of_read;
       html_str += "</span></div></div><div class=";
-      html_str += '"reading"';
+      html_str += '"' + o.status.toLowerCase() + '"';
       html_str += "> <span>";
-      html_str += "Reading";
+      html_str += o.status;
       html_str += '</span> </div></div><div class="mt-5">';
       html_str += '<h3 class="heading">';
-      html_str += o.title + "<br>" + o.author;
+      html_str += o.title;
+      html_str += '<p id="author">' + o.author + "</p>";
       html_str += '</h3><div class="mt-5"><div class="progress">';
       html_str += '<progress max="100" value="';
       html_str += (o.current_page / o.pages) * 100;
