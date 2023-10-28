@@ -58,10 +58,22 @@ var BOOKs = (function () {
       console.log(o);
       html_str +=
         '<div class="col-md-3" id="kartya"><div class="card p-3 mb-2"><div class="d-flex justify-content-between"><div class="d-flex flex-row align-items-center"><div class="icon"> <img src="favicon.ico"></img> </div> <div class="ms-2 c-details">';
-      html_str +=
-        '<h6 class="mb-0">Dribbble</h6> <span>4 days ago</span></div></div><div class="reading"> <span>Reading</span> </div></div><div class="mt-5">';
-      html_str +=
-        '<h3 class="heading">Junior Product<br>Designer-Singapore</h3><div class="mt-5"><div class="progress"><div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div></div><div class="mt-3"> <span class="text1">42 Applied <span class="text2">of 70 capacity</span></span> </div></div></div></div></div>';
+      html_str += '<h6 class="mb-0"';
+      html_str += "Dribbble";
+      html_str += "</h6><span> Started: ";
+      html_str += o.date_of_read;
+      html_str += "</span></div></div><div class=";
+      html_str += '"reading"';
+      html_str += "> <span>";
+      html_str += "Reading";
+      html_str += '</span> </div></div><div class="mt-5">';
+      html_str += '<h3 class="heading">';
+      html_str += o.title + "<br>" + o.author;
+      html_str += '</h3><div class="mt-5"><div class="progress">';
+      html_str += '<progress max="100" value="';
+      html_str += (o.current_page / o.pages) * 100;
+      html_str += '"></progress>';
+      html_str += "</div></div></div></div></div>";
     }
     html_str += "</section>";
     $("[data-role='browse_coffee_content']").append(html_str);

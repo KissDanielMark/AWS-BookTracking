@@ -1,13 +1,52 @@
 {
   "books": [
     {
+      "pages": 300,
+      "current_page": 100,
       "isbn": "LOCAL_A123456",
-      "title": "LOCAL_Test Book"
+      "title": "LOCAL_Test Book",
+      "author": "Iro1",
+      "date_of_read": "2023.11.02"
     },
     {
       "pages": 300,
+      "current_page": 200,
       "isbn": "LOCAL_D12345",
-      "title": "LOCAL_The Book - Vol.2"
+      "title": "LOCAL_The Book - Vol.2",
+      "author": "Iro2",
+      "date_of_read": "2023.11.03"
+    },
+    {
+      "pages": 300,
+      "current_page": 200,
+      "isbn": "LOCAL_D12345",
+      "title": "LOCAL_The Book - Vol.2",
+      "author": "Iro2",
+      "date_of_read": "2023.11.03"
+    },
+    {
+      "pages": 300,
+      "current_page": 200,
+      "isbn": "LOCAL_D12345",
+      "title": "LOCAL_The Book - Vol.2",
+      "author": "Iro2",
+      "date_of_read": "2023.11.03"
+    },
+    {
+      "pages": 300,
+      "current_page": 200,
+      "isbn": "LOCAL_D12345",
+      "title": "LOCAL_The Book - Vol.2",
+      "author": "Iro2",
+      "date_of_read": "2023.11.03"
+    },
+    {
+      "pages": 300,
+      "current_page": 200,
+      "isbn": "LOCAL_D12345",
+      "title": "LOCAL_The Book - Vol.2",
+      "author": "Iro2",
+      "date_of_read": "2023.11.03"
     }
   ]
 }
