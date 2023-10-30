@@ -3,12 +3,8 @@ const dbConfig = require("../config/config");
 // constructor
 const Supplier = function (supplier) {
   this.id = supplier.id;
-  this.name = supplier.name;
-  this.address = supplier.address;
-  this.city = supplier.city;
-  this.state = supplier.state;
-  this.email = supplier.email;
-  this.phone = supplier.phone;
+  this.username = supplier.username;
+  this.pwd = supplier.pwd;
 };
 // connecting on each request so the server will start without a db connection, plus
 //   a simple mechanism enabling the app to recover from a momentary missing db connection
@@ -32,7 +28,7 @@ Supplier.dbConnect = () => {
 
 Supplier.create = (newSupplier, result) => {
   const dbConn = Supplier.dbConnect();
-  dbConn.query("INSERT INTO suppliers SET ?", newSupplier, (err, res) => {
+  dbConn.query("INSERT INTO users SET ?", newSupplier, (err, res) => {
     if (err) {
       console.log("error: ", err);
       result(err, null);
@@ -58,37 +54,26 @@ Supplier.getAll = (result) => {
 
 Supplier.findById = (supplierId, result) => {
   const dbConn = Supplier.dbConnect();
-  dbConn.query(
-    `SELECT * FROM suppliers WHERE id = ${supplierId}`,
-    (err, res) => {
-      if (err) {
-        console.log("error: ", err);
-        result(err, null);
-        return;
-      }
-      if (res.length) {
-        console.log("found supplier: ", res[0]);
-        result(null, res[0]);
-        return;
-      }
-      result({ kind: "not_found" }, null);
+  dbConn.query(`SELECT * FROM users WHERE id = ${supplierId}`, (err, res) => {
+    if (err) {
+      console.log("error: ", err);
+      result(err, null);
+      return;
     }
-  );
+    if (res.length) {
+      console.log("found supplier: ", res[0]);
+      result(null, res[0]);
+      return;
+    }
+    result({ kind: "not_found" }, null);
+  });
 };
 
 Supplier.updateById = (id, supplier, result) => {
   const dbConn = Supplier.dbConnect();
   dbConn.query(
-    "UPDATE suppliers SET name = ?, city = ?, address = ?, email = ?, phone = ?, state = ? WHERE id = ?",
-    [
-      supplier.name,
-      supplier.city,
-      supplier.address,
-      supplier.email,
-      supplier.phone,
-      supplier.state,
-      id,
-    ],
+    "UPDATE users SET username = ?, pwd = ? WHERE id = ?",
+    [supplier.username, supplier.pwd, id],
     (err, res) => {
       if (err) {
         console.log("error: ", err);

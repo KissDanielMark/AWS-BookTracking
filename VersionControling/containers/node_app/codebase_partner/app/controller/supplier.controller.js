@@ -4,28 +4,13 @@ const { body, validationResult } = require("express-validator");
 
 exports.create = [
   // Validate and sanitize the name field.
-  body("name", "The supplier name is required")
+  body("name", "The user name is required")
     .trim()
     .isLength({ min: 1 })
     .escape(),
-  body("address", "The supplier address is required")
+  body("address", "The user password is required")
     .trim()
     .isLength({ min: 1 })
-    .escape(),
-  body("city", "The supplier city is required")
-    .trim()
-    .isLength({ min: 1 })
-    .escape(),
-  body("state", "The supplier state is required")
-    .trim()
-    .isLength({ min: 1 })
-    .escape(),
-  body(
-    "phone",
-    "Phone number should be 10 digit number plus optional country code"
-  )
-    .trim()
-    .isMobilePhone()
     .escape(),
 
   // Process request after validation and sanitization.
@@ -92,21 +77,6 @@ exports.update = [
   body("address", "The supplier address is required")
     .trim()
     .isLength({ min: 1 })
-    .escape(),
-  body("city", "The supplier city is required")
-    .trim()
-    .isLength({ min: 1 })
-    .escape(),
-  body("state", "The supplier state is required")
-    .trim()
-    .isLength({ min: 1 })
-    .escape(),
-  body(
-    "phone",
-    "Phone number should be 10 digit number plus optional country code"
-  )
-    .trim()
-    .isMobilePhone()
     .escape(),
 
   // Process request after validation and sanitization.
