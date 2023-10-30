@@ -4,11 +4,11 @@ const { body, validationResult } = require("express-validator");
 
 exports.create = [
   // Validate and sanitize the name field.
-  body("name", "The user name is required")
+  body("username", "The user name is required")
     .trim()
     .isLength({ min: 1 })
     .escape(),
-  body("address", "The user password is required")
+  body("pwd", "The user password is required")
     .trim()
     .isLength({ min: 1 })
     .escape(),
@@ -20,6 +20,7 @@ exports.create = [
 
     // Create a genre object with escaped and trimmed data.
     const supplier = new Supplier(req.body);
+    console.log(req.body);
 
     if (!errors.isEmpty()) {
       // There are errors. Render the form again with sanitized values/error messages.
@@ -70,11 +71,11 @@ exports.findOne = (req, res) => {
 
 exports.update = [
   // Validate and sanitize the name field.
-  body("name", "The supplier name is required")
+  body("username", "The user name is required")
     .trim()
     .isLength({ min: 1 })
     .escape(),
-  body("address", "The supplier address is required")
+  body("pwd", "The user password is required")
     .trim()
     .isLength({ min: 1 })
     .escape(),
