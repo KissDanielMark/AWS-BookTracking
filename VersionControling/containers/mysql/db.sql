@@ -10,8 +10,8 @@ CREATE TABLE IF NOT EXISTS users (
 -- Insert some data
 INSERT INTO users (username, pwd)
 VALUES 
-    ('Dan', 'pwd1'),
-    ('dan', 'pwd2');
+    ('dan', 'dan'),
+    ('User', 'pwd2');
 
 -- Query the data
 SELECT * FROM users;
