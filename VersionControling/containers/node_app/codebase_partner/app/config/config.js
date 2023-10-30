@@ -1,6 +1,6 @@
 // define default config, but allow overrides from ENV vars
 let config = {
-  APP_DB_HOST: "3.82.161.206",
+  APP_DB_HOST: "0.0.0.0",
   APP_DB_USER: "root",
   APP_DB_PASSWORD: "pwd",
   APP_DB_NAME: "your_database",
