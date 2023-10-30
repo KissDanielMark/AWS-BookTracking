@@ -92,7 +92,7 @@ Supplier.updateById = (id, supplier, result) => {
 
 Supplier.delete = (id, result) => {
   const dbConn = Supplier.dbConnect();
-  dbConn.query("DELETE FROM suppliers WHERE id = ?", id, (err, res) => {
+  dbConn.query("DELETE FROM users WHERE id = ?", id, (err, res) => {
     if (err) {
       console.log("error: ", err);
       result(err, null);

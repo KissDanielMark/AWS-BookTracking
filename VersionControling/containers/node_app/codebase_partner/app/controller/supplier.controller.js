@@ -4,7 +4,7 @@ const { body, validationResult } = require("express-validator");
 
 exports.create = [
   // Validate and sanitize the name field.
-  body("username", "The user name is required")
+  body("username", "The username is required")
     .trim()
     .isLength({ min: 1 })
     .escape(),
@@ -71,7 +71,7 @@ exports.findOne = (req, res) => {
 
 exports.update = [
   // Validate and sanitize the name field.
-  body("username", "The user name is required")
+  body("username", "The username is required")
     .trim()
     .isLength({ min: 1 })
     .escape(),
