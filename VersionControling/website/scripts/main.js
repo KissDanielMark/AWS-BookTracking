@@ -16,11 +16,21 @@ var MAIN = (function () {
     if (window.BOOK_CONFIG.COGNITO_LOGIN_BASE_URL_STR !== null) {
       window.location = window.BOOK_CONFIG.COGNITO_LOGIN_BASE_URL_STR;
     } else {
-      alert("No API to call");
+      loginLogic();
       BOOKs.loadItems();
       document.getElementById("loginOldal").style.display = "none";
       document.getElementById("konyvek").style.display = "block";
     }
+  }
+
+  function loginLogic() {
+    $.ajax({
+      url: window.BOOK_CONFIG.API_GW_BASE_URL_STR + "/" + "login",
+      method: "POST",
+      data: {},
+      error: handleErrorLogin,
+      success: handleSuccessLogin,
+    });
   }
 
   function logOut() {
@@ -91,6 +101,13 @@ var MAIN = (function () {
       success: handleReportCreationSuccess,
     });
   }
+
+  function handleErrorLogin(response) {
+    console.error(response);
+    showProblem("Something went wrong");
+  }
+
+  function handleSuccessLogin(response) {}
 
   function handleReportCreationSuccess(response) {
     console.info(response);
