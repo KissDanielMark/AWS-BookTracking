@@ -24,10 +24,19 @@ var MAIN = (function () {
   }
 
   function loginLogic() {
+    let felhaszalonev = document.getElementById("felhaszanlonevInput").value;
+    let jleszo = document.getElementById("jelszoInput").value;
+    alert(felhaszalonev + " " + jleszo);
+    let adat = { username: "felhaszalonev", password: "jleszo" };
+    alert(adat);
     $.ajax({
       url: window.BOOK_CONFIG.API_GW_BASE_URL_STR + "/" + "login",
-      method: "POST",
-      data: {},
+      method: "GET",
+      headers: { "Content-Type": "application/json" },
+      body: {
+        username: "value1",
+        password: "value2",
+      },
       error: handleErrorLogin,
       success: handleSuccessLogin,
     });
@@ -107,7 +116,10 @@ var MAIN = (function () {
     showProblem("Something went wrong");
   }
 
-  function handleSuccessLogin(response) {}
+  function handleSuccessLogin(response) {
+    console.info(response);
+    alert("Successful login!");
+  }
 
   function handleReportCreationSuccess(response) {
     console.info(response);
