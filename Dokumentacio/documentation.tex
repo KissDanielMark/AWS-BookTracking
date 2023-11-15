@@ -89,7 +89,8 @@ This service allows users to run code without provisioning or managing servers. 
 \begin{enumerate}
   \item Serverless Architecture: Lambda is a serverless computing service, which means developers do not need to manage the underlying servers. Instead, they write code and AWS handles the execution and scaling of that code.
   \item Event-Driven Model: Lambda functions are triggered by events such as changes to data in an Amazon S3 bucket, updates to a DynamoDB table, or incoming HTTP requests via Amazon API Gateway. This event-driven model allows for real-time responses to changes in the environment.
-  \item Supported Runtimes: AWS Lambda supports multiple programming languages including Node.js, Python, Java, Go, Ruby, .NET Core, and custom runtimes. This flexibility enables developers to use their preferred programming language.
+  \item Supported Runtimes: AWS Lambda supports multiple programming languages including Node.js, Python, Java, Go, Ruby, .NET Core, and custom runtimes.
+        This flexibility enables developers to use their preferred programming language.
   \item Pay-per-Use Pricing: With AWS Lambda, users pay only for the compute time consumed by their code. There is no charge when code is not running. This pricing model can lead to cost savings compared to traditional server-based architectures.
 \end{enumerate}
 
@@ -118,42 +119,92 @@ To achive this I have used the following technologies:
 Docker is a set of platform as a service (PaaS) products that use OS-level virtualization to deliver software in packages called containers. Containers are isolated from one another and bundle their own software, libraries and configuration files; they can communicate with each other through well-defined channels. All containers are run by a single operating system kernel and are thus more lightweight than virtual machines. Containers are created from images that specify their precise contents. Images are often created by combining and modifying standard images downloaded from public repositories.
 I used this for the admin page creation and for storing the user data in a MySQL database. I created two containers, one for the admin page and one for the database. The admin page is written in Express JS and the database is MySQL.
 
-\subsection{User database - MySQL}
+\subsection{MySQL - User database}
 
 MySQL is an open-source relational database management system (RDBMS). Its name is a combination of "My", the name of co-founder Michael Widenius's daughter, and "SQL", the abbreviation for Structured Query Language. A relational database organizes data into one or more data tables in which data types may be related to each other; these relations help structure the data. SQL is a language programmers use to create, modify and extract data from the relational database, as well as control user access to the database.
 I have set up this database using Docker and I have created a table for the users. The table has the following columns: username, password. To create the container I first created the image, which is created from the Dockerfile. The Dockerfile I composed contains the fondamentals like it used mysql 8.2.0 and it exposes its port to 3306.
 After the creation I used the following command to update the database.
-\begin{lstlisting}[language=Python, fontsize=\small, numbers=left]
-  docker run --name mysql_1 -p 3306:3306 -e MYSQL_ROOT_PASSWORD=pwd -d mysql_server
+\begin{lstlisting}[language=Python,basicstyle=\ttfamily\small,]
+  docker run --name mysql_1 -p 3306:3306 
+    -> -e MYSQL_ROOT_PASSWORD=pwd -d mysql_server
   docker exec -i mysql_1 mysql -u root -ppwd < db.sql
 \end{lstlisting}
 After I have successfuly created the container I tagged it and pushed it to the AWS ECR(Elastic Container Registry).
 
+\begin{lstlisting}[language=Python,basicstyle=\ttfamily\small,]
+  docker tag mysql_server 
+    -> 554751627586.dkr.ecr.eu-north-1.amazonaws.com/mysql_1:latest
+  docker push 554751627586.dkr.ecr.eu-north-1.amazonaws.com/mysql_1:latest
+\end{lstlisting}
 
-\subsection{Admin page - Express JS}
+\subsection{Express JS - Admin page}
 
 The admin front end page was developed using Express JS. Express is a minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile applications.
-On the we
+On the webpagee the admins can register new users and also delete them. The users and their passwords are stored in the MySQL database. I also applied Bootsraps to the page to make it more user friendly and responsive.
+After I have finished the development I have created the image and pushed it to the AWS ECR(Elastic Container Registry) also.
+\begin{lstlisting}[language=Python,basicstyle=\ttfamily\small,]
+  docker inspect network bridge
+  docker build --tag node_app .   
+  docker run -d --name node_app_1 -p 3000:3000 
+    -> -e APP_DB_HOST=172.17.0.2 node_app
+\end{lstlisting}
 
+I exposed the 3000 TCP port to the 3000 port of the host machine. I also set the APP\_DB\_HOST environment variable to the IP address of the MySQL container.
+This way the Express JS application can connect to the MySQL database.
+
+\section{Amazon EC2 - Elastic Compute Cloud}
+Aftr I have pushed my conatainers to the AWS ECR I have created an EC2 instance. I have used the Amazon Linux 2 AMI (HVM), SSD Volume Type. I have also added a 30GB storage to the instance. I have also added that the the instance can be accessed from anywhere. So I added a Security Group with the following rules:
+\begin{itemize}
+  \item SSH - TCP - 22 - Anywhere
+  \item HTTP - TCP - 80 - Anywhere
+  \item HTTPS - TCP - 443 - Anywhere
+  \item MYSQL/Aurora - TCP - 3306 - Anywhere
+\end{itemize}
+
+After the creation of the instance I have connected to it using SSH. I have also installed Docker and Docker Compose on the instance. After that I have pulled the images from the AWS ECR and started the containers. I also had to authorize the Docker to pull images from the AWS ECR. I have done this by running the following command:
+\begin{lstlisting}[language=Python,basicstyle=\ttfamily\small,]
+  aws ecr get-login-password --region eu-north-1 
+  docker login --username AWS --password-stdin 
+    -> 554751627586.dkr.ecr.eu-north-1.amazonaws.com
+  docker pull 554751627586.dkr.ecr.eu-north-1.amazonaws.com/node-app
+\end{lstlisting}
+
+After this I started the front-end page of the Book Tracking app.
+
+\section{Amazon S3 - Simple Storage Service}
+
+The front-end page for the Book Tracking app is hosted on the Amazon S3. I have created a bucket for the page and I have uploaded the files to the bucket. I have also set the bucket to be public so anyone can access it. I have also set the bucket to be a static website hosting. I have also set the index.html as the index document. This way the page will be loaded when the user enters the URL of the bucket.
+The page was creste with the help of HTML, CSS and JavaScript. I have also used Bootstrap to make the page more user friendly and responsive. First the user has to log in to the page.
+This data is stored in the MySQL database. After the successful login the user can see the books he/she has added to the list.
+The books are stored in the Amazon DynamoDB database. The user can also log out from the page.
+When the login happens or the Amazon DynamoDB retrieval the page sends a request to the Amazon API Gateway. This is a REST API which is connected to the AWS Lambda function. This function is written in Python and it is responsible for the communication between the front-end page and the Amazon DynamoDB database. The function is also responsible for the authentication of the users.
+In the next section I will explain these.
+
+\section{Amazon API Gateway}
+
+The Amazon API Gateway is used to host the different ReST APIs. There I have created the following APIs:
+\begin{itemize}
+  \item GET: books
+  \item POST: create\_book
+  \item GET: login
+\end{itemize}
+
+\section{AWS Lambda}
 \chapter{Presentation of finished work}
 
 In this section I will present and showcase my finished appliction. I will include screenshots to have a better representation and understanding for the reader.
-The camera function in the application allows you to capture the current state of the graphs, which in this case came in handy for documentation.
-
 
 \begin{figure}[!ht]
   \centering
   \includegraphics[scale=0.2]{front.jpeg}
-  % \includegraphics[width=150mm, keepaspectratio]{figures/TeXnicCenter.png}
-  \caption{The main screen of the application.}
+  \caption{The main screen of the admin page.}
   \label{fig:TexnicCenter}
 \end{figure}
 
 \begin{figure}[!ht]
   \centering
   \includegraphics[scale=0.2]{side.jpeg}
-  % \includegraphics[width=150mm, keepaspectratio]{figures/TeXnicCenter.png}
-  \caption{The main screen of the application.}
+  \caption{The main screen of the web-page.}
   \label{fig:TexnicCenter}
 \end{figure}
 
@@ -161,7 +212,7 @@ The camera function in the application allows you to capture the current state o
   \centering
   \includegraphics[scale=0.2]{top.jpeg}
   % \includegraphics[width=150mm, keepaspectratio]{figures/TeXnicCenter.png}
-  \caption{The main screen of the application.}
+  \caption{The main screen after the admin login.}
   \label{fig:TexnicCenter}
 \end{figure}
 
