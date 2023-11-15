@@ -169,6 +169,13 @@ After the creation of the instance I have connected to it using SSH. I have also
   docker pull 554751627586.dkr.ecr.eu-north-1.amazonaws.com/node-app
 \end{lstlisting}
 
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[scale=0.5]{aws_configure_ec2.png}
+  \caption{AWS EC2 configuration.}
+  \label{fig:TexnicCenter}
+\end{figure}
+
 After this I started the front-end page of the Book Tracking app.
 
 \section{Amazon S3 - Simple Storage Service}
@@ -189,74 +196,79 @@ The Amazon API Gateway is used to host the different ReST APIs. There I have cre
   \item GET: login
 \end{itemize}
 
+To create these APIs I have used the AWS Lambda functions. I have also set the API Gateway to be public so anyone can access it. I have also set the CORS to be enabled. This way the front-end page can access the APIs. I have also set the API Gateway to be a proxy. This way the API Gateway will forward the requests to the AWS Lambda functions. I have also set the API Gateway to be a REST API. This way the API Gateway will be able to handle the different HTTP methods.
+
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[scale=0.5]{api.png}
+  \caption{The APIs for the application.}
+  \label{fig:TexnicCenter}
+\end{figure}
+
 \section{AWS Lambda}
+
+For the APIs i have created the following AWS Lambda functions:
+\begin{itemize}
+  \item get\_books - is used for the GET: books API. It is responsible for retrieving the books from the Amazon DynamoDB database.
+  \item post\_book - is ued for the POST: create\_book API. It is responsible for creating a new book in the Amazon DynamoDB database.
+  \item login\_python - is used for the GET: login API. It is responsible for the authentication of the users.
+\end{itemize}
+
+These lambda functions were created using Python. For the login python I had to create a Lambda Layer. The layer was needed to add mysql.connector to the Lambda function. This way the function can connect to the MySQL database. I have also set the timeout for the functions to be 30 seconds. This way the functions will not time out when they are retrieving the data from the database.
+
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[scale=0.4]{lambda_functions.png}
+  \caption{The lambda functions for the APIs.}
+  \label{fig:TexnicCenter}
+\end{figure}
+
+
 \chapter{Presentation of finished work}
 
 In this section I will present and showcase my finished appliction. I will include screenshots to have a better representation and understanding for the reader.
 
+
 \begin{figure}[!ht]
   \centering
-  \includegraphics[scale=0.2]{front.jpeg}
+  \includegraphics[scale=0.3]{admin_list.png}
   \caption{The main screen of the admin page.}
   \label{fig:TexnicCenter}
 \end{figure}
 
 \begin{figure}[!ht]
   \centering
-  \includegraphics[scale=0.2]{side.jpeg}
-  \caption{The main screen of the web-page.}
+  \includegraphics[scale=0.3]{admin_create.png}
+  \caption{Creating a new user.}
   \label{fig:TexnicCenter}
 \end{figure}
 
 \begin{figure}[!ht]
   \centering
-  \includegraphics[scale=0.2]{top.jpeg}
-  % \includegraphics[width=150mm, keepaspectratio]{figures/TeXnicCenter.png}
-  \caption{The main screen after the admin login.}
+  \includegraphics[scale=0.3]{admin_delete.png}
+  \caption{Deleting a user.}
   \label{fig:TexnicCenter}
 \end{figure}
 
-As the attached images clearly show, the virtual 3D graph can be easily walked around and viewed from different angles, thereby giving users a new comparative perspective. It is possible to move and rotate the entire graph, as well as move the current exchange rate columns to make it easier to compare with other metrics. The move and rotate functions are only available in Spectate mode, for this you have to stop Live mode (or otherwise start Live mode) by pressing the button located in the upper left corner.
-
-Currently, 2 currencies are available in the application, but of course this can be easily expanded at any time in the future. These two are EUR to HUF and USD to HUF. These can be displayed after selection and confirmation from the bottom bar. If the given exchange rate is already placed, it can no longer be added to the graph twice.
 
 \begin{figure}[!ht]
   \centering
-  \includegraphics[scale=0.2]{selector.jpeg}
-  % \includegraphics[width=150mm, keepaspectratio]{figures/TeXnicCenter.png}
+  \includegraphics[scale=0.3]{frontend-login.png}
+  \caption{The login page of the application.}
+  \label{fig:TexnicCenter}
+\end{figure}
+
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[scale=0.3]{frontend-main.png}
   \caption{The main screen of the application.}
   \label{fig:TexnicCenter}
 \end{figure}
-
-\begin{figure}[!ht]
-  \centering
-  \includegraphics[scale=0.2]{megerosites.jpeg}
-  % \includegraphics[width=150mm, keepaspectratio]{figures/TeXnicCenter.png}
-  \caption{The main screen of the application.}
-  \label{fig:TexnicCenter}
-\end{figure}
-
-\begin{figure}[!ht]
-  \centering
-  \includegraphics[scale=0.2]{not_available.jpeg}
-  % \includegraphics[width=150mm, keepaspectratio]{figures/TeXnicCenter.png}
-  \caption{The main screen of the application.}
-  \label{fig:TexnicCenter}
-\end{figure}
-
-
-
-\chapter{Sources}
-
-Below I list the external links and sources used during the project and the report.
 
 \begin{thebibliography}{9}
   \bibitem{techtagaws}
   TechTarget - Amazon Web Services: https://www.techtarget.com/searchaws/definition/Amazon-Web-Services
 
-  \bibitem{lamport94}
-  Leslie Lamport (1994) \emph{\LaTeX: a document preparation system}, Addison
-  Wesley, Massachusetts, 2nd ed.
 \end{thebibliography}
 
 \end{document}

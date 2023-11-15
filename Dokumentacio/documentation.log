@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.9.19)  15 NOV 2023 10:06
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.9.19)  15 NOV 2023 11:50
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1096,6 +1096,12 @@ LaTeX Warning: Label `fig:TexnicCenter' multiply defined.
 
 LaTeX Warning: Label `fig:TexnicCenter' multiply defined.
 
+
+LaTeX Warning: Label `fig:TexnicCenter' multiply defined.
+
+
+LaTeX Warning: Label `fig:TexnicCenter' multiply defined.
+
 )
 \openout1 = `documentation.aux'.
 
@@ -1241,7 +1247,6 @@ Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
 )
 \tf@toc=\write5
 \openout5 = `documentation.toc'.
@@ -1280,51 +1285,84 @@ Overfull \hbox (4.60303pt too wide) in paragraph at lines 152--154
 []\OT1/cmr/m/n/10.95 I ex-posed the 3000 TCP port to the 3000 port of the host ma-chine. I also set the APP[]DB[]HOST
  []
 
-[8] [9] [10]
+[8]
+<./images/aws_configure_ec2.png, id=180, 1032.85875pt x 258.9675pt>
+File: ./images/aws_configure_ec2.png Graphic file (type png)
+<use ./images/aws_configure_ec2.png>
+Package pdftex.def Info: ./images/aws_configure_ec2.png  used on input line 174.
+(pdftex.def)             Requested size: 516.42812pt x 129.48341pt.
+
+Overfull \hbox (41.7801pt too wide) in paragraph at lines 174--175
+ [][] 
+ []
+
+[9 <./images/aws_configure_ec2.png>]
+<./images/api.png, id=194, 285.065pt x 320.19624pt>
+File: ./images/api.png Graphic file (type png)
+<use ./images/api.png>
+Package pdftex.def Info: ./images/api.png  used on input line 203.
+(pdftex.def)             Requested size: 142.53215pt x 160.09772pt.
+ [10 <./images/api.png>]
+<./images/lambda_functions.png, id=201, 1303.87125pt x 321.2pt>
+File: ./images/lambda_functions.png Graphic file (type png)
+<use ./images/lambda_functions.png>
+Package pdftex.def Info: ./images/lambda_functions.png  used on input line 221.
+(pdftex.def)             Requested size: 521.53926pt x 128.47772pt.
+
+Overfull \hbox (46.89125pt too wide) in paragraph at lines 221--222
+ [][] 
+ []
+
+[11 <./images/lambda_functions.png>]
 Chapter 4.
-<./images/front.jpeg, id=197, 831.105pt x 1798.72pt>
-File: ./images/front.jpeg Graphic file (type jpg)
-<use ./images/front.jpeg>
-Package pdftex.def Info: ./images/front.jpeg  used on input line 199.
-(pdftex.def)             Requested size: 166.21805pt x 359.73763pt.
-<./images/side.jpeg, id=198, 831.105pt x 1798.72pt>
-File: ./images/side.jpeg Graphic file (type jpg)
-<use ./images/side.jpeg>
-Package pdftex.def Info: ./images/side.jpeg  used on input line 206.
-(pdftex.def)             Requested size: 166.21805pt x 359.73763pt.
-<./images/top.jpeg, id=199, 831.105pt x 1798.72pt>
-File: ./images/top.jpeg Graphic file (type jpg)
-<use ./images/top.jpeg>
-Package pdftex.def Info: ./images/top.jpeg  used on input line 213.
-(pdftex.def)             Requested size: 166.21805pt x 359.73763pt.
-[11
+<./images/admin_list.png, id=208, 1686.3pt x 1053.9375pt>
+File: ./images/admin_list.png Graphic file (type png)
+<use ./images/admin_list.png>
+Package pdftex.def Info: ./images/admin_list.png  used on input line 234.
+(pdftex.def)             Requested size: 505.8939pt x 316.18369pt.
 
- <./images/front.jpeg>]
-<./images/selector.jpeg, id=205, 831.105pt x 1798.72pt>
-File: ./images/selector.jpeg Graphic file (type jpg)
-<use ./images/selector.jpeg>
-Package pdftex.def Info: ./images/selector.jpeg  used on input line 225.
-(pdftex.def)             Requested size: 166.21805pt x 359.73763pt.
-<./images/megerosites.jpeg, id=206, 831.105pt x 1798.72pt>
-File: ./images/megerosites.jpeg Graphic file (type jpg)
-<use ./images/megerosites.jpeg>
-Package pdftex.def Info: ./images/megerosites.jpeg  used on input line 233.
-(pdftex.def)             Requested size: 166.21805pt x 359.73763pt.
-<./images/not_available.jpeg, id=207, 831.105pt x 1798.72pt>
-File: ./images/not_available.jpeg Graphic file (type jpg)
-<use ./images/not_available.jpeg>
-Package pdftex.def Info: ./images/not_available.jpeg  used on input line 241.
-(pdftex.def)             Requested size: 166.21805pt x 359.73763pt.
- [12 <./images/side.jpeg>] [13 <./images/top.jpeg>] [14 <./images/selector.jpeg>] [15 <./images/megerosites.jpeg>] [16 <./images/not_available.jpeg>]
-Chapter 5.
-[17
+Overfull \hbox (31.2459pt too wide) in paragraph at lines 234--235
+ [][] 
+ []
 
-]
-Overfull \hbox (2.95491pt too wide) in paragraph at lines 255--256
+<./images/admin_create.png, id=209, 1686.3pt x 1053.9375pt>
+File: ./images/admin_create.png Graphic file (type png)
+<use ./images/admin_create.png>
+Package pdftex.def Info: ./images/admin_create.png  used on input line 241.
+(pdftex.def)             Requested size: 505.8939pt x 316.18369pt.
+
+Overfull \hbox (31.2459pt too wide) in paragraph at lines 241--242
+ [][] 
+ []
+
+<./images/admin_delete.png, id=210, 1686.3pt x 1053.9375pt>
+File: ./images/admin_delete.png Graphic file (type png)
+<use ./images/admin_delete.png>
+Package pdftex.def Info: ./images/admin_delete.png  used on input line 248.
+(pdftex.def)             Requested size: 505.8939pt x 316.18369pt.
+
+Overfull \hbox (31.2459pt too wide) in paragraph at lines 248--249
+ [][] 
+ []
+
+<./images/frontend-login.png, id=211, 592.2125pt x 347.2975pt>
+File: ./images/frontend-login.png Graphic file (type png)
+<use ./images/frontend-login.png>
+Package pdftex.def Info: ./images/frontend-login.png  used on input line 256.
+(pdftex.def)             Requested size: 177.66512pt x 104.19005pt.
+<./images/frontend-main.png, id=212, 1199.48125pt x 439.6425pt>
+File: ./images/frontend-main.png Graphic file (type png)
+<use ./images/frontend-main.png>
+Package pdftex.def Info: ./images/frontend-main.png  used on input line 263.
+(pdftex.def)             Requested size: 359.84715pt x 131.89375pt.
+[12
+
+ <./images/admin_list.png>] [13 <./images/admin_create.png> <./images/admin_delete.png>] [14 <./images/frontend-login.png> <./images/frontend-main.png>]
+Overfull \hbox (2.95491pt too wide) in paragraph at lines 270--271
 []\OT1/cmr/m/n/10.95 TechTarget - Ama-zon Web Ser-vices: https://www.techtarget.com/searchaws/definition/Amazon-
  []
 
-[18
+[15
 
 ] (./documentation.aux)
  ***********
@@ -1340,18 +1378,18 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 37314 strings out of 474934
- 746714 string characters out of 5759811
+ 37319 strings out of 474934
+ 747285 string characters out of 5759811
  1942791 words of memory out of 5000000
- 58112 multiletter control sequences out of 15000+600000
- 584988 words of font info for 112 fonts, out of 8000000 for 9000
+ 58122 multiletter control sequences out of 15000+600000
+ 584290 words of font info for 110 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,7n,102p,719b,1370s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb>
-Output written on documentation.pdf (19 pages, 1387779 bytes).
+</usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb>
+Output written on documentation.pdf (16 pages, 1967054 bytes).
 PDF statistics:
- 370 PDF objects out of 1000 (max. 8388607)
- 277 compressed objects within 3 object streams
- 88 named destinations out of 1000 (max. 500000)
- 339 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 353 PDF objects out of 1000 (max. 8388607)
+ 258 compressed objects within 3 object streams
+ 85 named destinations out of 1000 (max. 500000)
+ 341 words of extra memory for PDF output out of 10000 (max. 10000000)
 
