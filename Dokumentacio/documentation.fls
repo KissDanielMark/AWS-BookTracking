@@ -500,6 +500,10 @@ INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/newpx/zplsyc.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/newpx/zplexa.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/newpx/zplexa.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/newpx/zplexa.tfm
+INPUT ./images/aws.drawio.png
+INPUT ./images/aws.drawio.png
+INPUT ./images/aws.drawio.png
+INPUT ./images/aws.drawio.png
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/listings/lstlang1.sty
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/listings/lstlang1.sty
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/listings/lstlang1.sty

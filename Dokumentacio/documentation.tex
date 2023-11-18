@@ -104,6 +104,14 @@ I have also version controled the whole development process using git and publis
 The project I have created using AWS and other technologies is a Book Tracking website. It has a seperate admin page where the admins can register the users and another page where the users can track their books.
 For the books there are three state. Not started, Reading and Finished. These books are presented in a crad format and it is only visible to the users after a successful login.
 To achive this I have used the following technologies:
+
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[scale=0.23]{aws.drawio.png}
+  \caption{The architecture of the application.}
+  \label{fig:TexnicCenter}
+\end{figure}
+
 \section{Docker}
 
 Docker is a set of platform as a service (PaaS) products that use OS-level virtualization to deliver software in packages called containers. Containers are isolated from one another and bundle their own software, libraries and configuration files; they can communicate with each other through well-defined channels. All containers are run by a single operating system kernel and are thus more lightweight than virtual machines. Containers are created from images that specify their precise contents. Images are often created by combining and modifying standard images downloaded from public repositories. \cite{docker}
@@ -152,6 +160,14 @@ Aftr I have pushed my conatainers to the AWS ECR I have created an EC2 instance.
 \end{itemize}
 
 After the creation of the instance I have connected to it using SSH. I have also installed Docker and Docker Compose on the instance. After that I have pulled the images from the AWS ECR and started the containers. I also had to authorize the Docker to pull images from the AWS ECR. I have done this by running the following command:
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[scale=0.45]{aws_configure_ec2.png}
+  \caption{AWS EC2 configuration.}
+  \label{fig:TexnicCenter}
+\end{figure}
+
 \begin{lstlisting}[language=Python,basicstyle=\ttfamily\small,]
   aws ecr get-login-password --region eu-north-1 
   docker login --username AWS --password-stdin 
@@ -159,12 +175,7 @@ After the creation of the instance I have connected to it using SSH. I have also
   docker pull 554751627586.dkr.ecr.eu-north-1.amazonaws.com/node-app
 \end{lstlisting}
 
-\begin{figure}[!ht]
-  \centering
-  \includegraphics[scale=0.5]{aws_configure_ec2.png}
-  \caption{AWS EC2 configuration.}
-  \label{fig:TexnicCenter}
-\end{figure}
+
 
 After this I started the front-end page of the Book Tracking app.
 
