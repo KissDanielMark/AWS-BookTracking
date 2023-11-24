@@ -128,8 +128,6 @@ The project I have created using AWS and other technologies is a Book Tracking w
 For the books there are three state. Not started, Reading and Finished. These books are presented in a card format in grid layout and it is only visible to the users after a successful login.
 To achive this I have used the following technologies:
 
-%%TODO: ábra javítása
-
 \begin{figure}[!ht]
   \centering
   \includegraphics[scale=0.23]{aws.drawio.png}
@@ -149,48 +147,34 @@ After the creation I used the following command to update the database.
     -> -e MYSQL_ROOT_PASSWORD=pwd -d mysql_server
   docker exec -i mysql_1 mysql -u root -ppwd < db.sql
 \end{lstlisting}
-%%TODO: folytatás
-This Docker command is used to
-After I have successfuly created the container I tagged it and pushed it to the AWS ECR(Elastic Container Registry).
-
-\begin{lstlisting}[language=Python,basicstyle=\ttfamily\small,]
-  docker tag mysql_server 
-    -> 554751627586.dkr.ecr.eu-north-1.amazonaws.com/mysql_1:latest
-  docker push 554751627586.dkr.ecr.eu-north-1.amazonaws.com/mysql_1:latest
-\end{lstlisting}
+This Docker command is used for the creation of the container. It also sets the root password to pwd. After the creation I used the following command to update the database.
+After I have successfuly created the container I tagged it and pushed it to the AWS ECR (Elastic Container Registry).
 
 \subsection{Express JS - Admin page}
 
 The admin front end page was developed using Express JS. Express is a minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile applications.
-On the webpagee the admins can register new users and also delete them. The users and their passwords are stored in the MySQL database. I also applied Bootsraps to the page to make it more user friendly and responsive.
-After I have finished the development I have created the image and pushed it to the AWS ECR(Elastic Container Registry) also.
-\begin{lstlisting}[language=Python,basicstyle=\ttfamily\small,]
-  docker inspect network bridge
-  docker build --tag node_app .   
-  docker run -d --name node_app_1 -p 3000:3000 
-    -> -e APP_DB_HOST=172.17.0.2 node_app
-\end{lstlisting}
+On the webpage the admins can register new users and also delete them. The users and their passwords are stored in the MySQL database. I also applied Bootsraps to the page to make it more user friendly and responsive.
+After I have finished the development I have created the image and pushed it to the AWS ECR (Elastic Container Registry) also.
 
-I exposed the 3000 TCP port to the 3000 port of the host machine. I also set the APP\_DB\_HOST environment variable to the IP address of the MySQL container.
+I exposed the 3000 TCP port to the 3000 port of the host machine. This way the page will be accessible from the outside using this port forwarding.
+I also set the APP\_DB\_HOST environment variable to the IP address of the MySQL container. If the APP\_DB\_HOST is not set the Express JS application will not be able to connect to the MySQL database.
 This way the Express JS application can connect to the MySQL database.
 
 \section{Amazon EC2 - Elastic Compute Cloud}
-Aftr I have pushed my conatainers to the AWS ECR I have created an EC2 instance. I have used the Amazon Linux 2 AMI (HVM), SSD Volume Type. I have also added a 30GB storage to the instance. I have also added that the the instance can be accessed from anywhere. So I added a Security Group with the following rules:
+After I have pushed my conatainers to the AWS ECR I have created an EC2 instance.
+I have used the Amazon Linux 2 AMI (HVM), SSD Volume Type. I used this virtual machine to run the containers. I have also added a 30GB storage to the instance. I have also added that the the instance can be accessed from anywhere. So I added a Security Group with the following rules:
 \begin{itemize}
   \item SSH - TCP - 22 - Anywhere
   \item HTTP - TCP - 80 - Anywhere
   \item HTTPS - TCP - 443 - Anywhere
-  \item MYSQL/Aurora - TCP - 3306 - Anywhere
+  \item MYSQL - TCP - 3306 - Anywhere
 \end{itemize}
 
-After the creation of the instance I have connected to it using SSH. I have also installed Docker and Docker Compose on the instance. After that I have pulled the images from the AWS ECR and started the containers. I also had to authorize the Docker to pull images from the AWS ECR. I have done this by running the following command:
+After the creation of the instance I have connected to it using SSH.
+I have also installed Docker and Docker Compose on the instance.
+After that I have pulled the images from the AWS ECR and started the containers.
+I also had to authorize the Docker to pull images from the AWS ECR.
 
-\begin{figure}[h]
-  \centering
-  \includegraphics[scale=0.45]{aws_configure_ec2.png}
-  \caption{AWS EC2 configuration.}
-  \label{fig:TexnicCenter}
-\end{figure}
 
 \begin{lstlisting}[language=Python,basicstyle=\ttfamily\small,]
   aws ecr get-login-password --region eu-north-1 
@@ -206,22 +190,27 @@ After this I started the front-end page of the Book Tracking app.
 \section{Amazon S3 - Simple Storage Service}
 
 The front-end page for the Book Tracking app is hosted on the Amazon S3. I have created a bucket for the page and I have uploaded the files to the bucket. I have also set the bucket to be public so anyone can access it. I have also set the bucket to be a static website hosting. I have also set the index.html as the index document. This way the page will be loaded when the user enters the URL of the bucket.
-The page was creste with the help of HTML, CSS and JavaScript. I have also used Bootstrap to make the page more user friendly and responsive. First the user has to log in to the page.
+The page was created with the help of HTML, CSS and JavaScript. I have also used Bootstrap to make the page more user friendly and responsive. First the user has to log in to the page.
 This data is stored in the MySQL database. After the successful login the user can see the books he/she has added to the list.
 The books are stored in the Amazon DynamoDB database. The user can also log out from the page.
-When the login happens or the Amazon DynamoDB retrieval the page sends a request to the Amazon API Gateway. This is a REST API which is connected to the AWS Lambda function. This function is written in Python and it is responsible for the communication between the front-end page and the Amazon DynamoDB database. The function is also responsible for the authentication of the users.
+When the login happens it sends a request to the Amazon DynamoDB through the Amazon API Gateway.
+This is a REST API which is connected to the AWS Lambda function. This function is written in Python and it is responsible for the communication between the front-end page and the Amazon DynamoDB database.
+The function is also responsible for the authentication of the users.
 In the next section I will explain these.
 
 \section{Amazon API Gateway}
 
-The Amazon API Gateway is used to host the different ReST APIs. There I have created the following APIs:
+The Amazon API Gateway is used to host the different REST APIs. There I have created the following APIs:
 \begin{itemize}
   \item GET: books
   \item POST: create\_book
   \item GET: login
 \end{itemize}
 
-To create these APIs I have used the AWS Lambda functions. I have also set the API Gateway to be public so anyone can access it. I have also set the CORS to be enabled. This way the front-end page can access the APIs. I have also set the API Gateway to be a proxy. This way the API Gateway will forward the requests to the AWS Lambda functions. I have also set the API Gateway to be a REST API. This way the API Gateway will be able to handle the different HTTP methods.
+I have attached AWS Lambda functions to these API paths. I have also set the API Gateway to be public so anyone can access it.
+I have also set the CORS to be enabled. CORS stands for Cross-Origin Resource Sharing. CORS is a mechanism that allows restricted resources on a web page to be requested from another domain outside the domain from which the first resource was served.
+I had to enable this because the front-end page is hosted on the Amazon S3 and the APIs are hosted on the Amazon API Gateway.
+This way the front-end page can access the APIs. I have also set the API Gateway to be a proxy. This way the API Gateway will forward the requests to the AWS Lambda functions. I have also set the API Gateway to be a REST API. This way the API Gateway will be able to handle the different HTTP methods.
 
 \begin{figure}[!ht]
   \centering
@@ -232,14 +221,14 @@ To create these APIs I have used the AWS Lambda functions. I have also set the A
 
 \section{AWS Lambda}
 
-For the APIs i have created the following AWS Lambda functions:
+For the APIs I have created the following AWS Lambda functions:
 \begin{itemize}
   \item get\_books - is used for the GET: books API. It is responsible for retrieving the books from the Amazon DynamoDB database.
   \item post\_book - is ued for the POST: create\_book API. It is responsible for creating a new book in the Amazon DynamoDB database.
   \item login\_python - is used for the GET: login API. It is responsible for the authentication of the users.
 \end{itemize}
 
-These lambda functions were created using Python. For the login python I had to create a Lambda Layer. The layer was needed to add mysql.connector to the Lambda function. This way the function can connect to the MySQL database. I have also set the timeout for the functions to be 30 seconds. This way the functions will not time out when they are retrieving the data from the database.
+These lambda functions were created using Python. For the login function I had to create a Lambda Layer. The layer was needed to add mysql.connector to the Lambda function. This way the function can connect to the MySQL database. I have also set the timeout for the functions to be 30 seconds. This way the functions will not time out when they are retrieving the data from the database.
 
 \begin{figure}[!ht]
   \centering
@@ -251,79 +240,82 @@ These lambda functions were created using Python. For the login python I had to 
 
 \chapter{Presentation of finished work}
 
-In this section I will present and showcase my finished appliction. I will include screenshots to have a better representation and understanding for the reader.
+In this section I will present and showcase my finished appliction.
+I will include screenshots to have a better representation and understanding for the reader.
+My application is a Book Tracking application. It has a seperate admin page where the admins can register the users and another page where the users can track their books.
+For the books there are three state. Not started, Reading and Finished. These books are presented in a card format in grid layout and it is only visible to the users after a successful login.
 
 
 \begin{figure}[!ht]
-  \centering
-  \includegraphics[scale=0.3]{admin_list.png}
-  \caption{The main screen of the admin page.}
-  \label{fig:TexnicCenter}
-\end{figure}
-
-\begin{figure}[!ht]
-  \centering
-  \includegraphics[scale=0.3]{admin_create.png}
-  \caption{Creating a new user.}
-  \label{fig:TexnicCenter}
-\end{figure}
-
-\begin{figure}[!ht]
-  \centering
-  \includegraphics[scale=0.3]{admin_delete.png}
-  \caption{Deleting a user.}
-  \label{fig:TexnicCenter}
+  \begin{center}
+    \includegraphics[scale=0.3]{admin_list.png}
+    \caption{The main screen of the admin page.}
+    \label{fig:TexnicCenter}
+  \end{center}
+  On this page the admins can see the list of the users. They can also create new users and delete existing ones.
 \end{figure}
 
 
 \begin{figure}[!ht]
-  \centering
-  \includegraphics[scale=0.3]{frontend-login.png}
-  \caption{The login page of the application.}
-  \label{fig:TexnicCenter}
+  \begin{center}
+    \includegraphics[scale=0.3]{admin_create.png}
+    \caption{Creating a new user.}
+    \label{fig:TexnicCenter}
+  \end{center}
+  On this page the admins can create new users. They have to provide a username and a password for the new user.
 \end{figure}
 
+
 \begin{figure}[!ht]
-  \centering
-  \includegraphics[scale=0.3]{frontend-main.png}
-  \caption{The main screen of the application.}
-  \label{fig:TexnicCenter}
+  \begin{center}
+    \includegraphics[scale=0.3]{frontend-login.png}
+    \caption{The login page of the application.}
+    \label{fig:TexnicCenter}
+  \end{center}
+  The application users have to log in to the page. This way they can see the books they have added to the list. Only users who are registered in the database can log in to the page.
 \end{figure}
+
+
+\begin{figure}[!ht]
+  \begin{center}
+    \includegraphics[scale=0.3]{frontend-main.png}
+    \caption{The main screen of the application.}
+    \label{fig:TexnicCenter}
+  \end{center}
+  On this page the users can see the books they have added to the list. They can also add new books to the list. They can also change the state of the books. The books can be in three states: Not started, Reading and Finished.
+\end{figure}
+
+
 
 \begin{thebibliography}{9}
   \bibitem{techtagaws}
   TechTarget - Amazon Web Services: https://www.techtarget.com/searchaws/definition/Amazon-Web-Services
 
   \bibitem{awsacademy}
-  Amazaon Web Services Academy: https://aws.amazon.com/training/awsacademy/
+  Amazon Inc, Amazaon Web Services Academy 2023. [Online] Accessed: 2023-11-24.: https://aws.amazon.com/training/awsacademy/
 
   \bibitem{awsec2}
-  Amazon EC2: https://aws.amazon.com/pm/ec2/
+  Amazon Inc, Amazon EC2. 2023. [Online] Accessed: 2023-11-24.: https://aws.amazon.com/pm/ec2/
 
   \bibitem{awss3}
-  Amazon S3: https://aws.amazon.com/s3/
+  Amazon Inc, Amazon S3 2023. [Online] Accessed: 2023-11-24.: https://aws.amazon.com/s3/
 
   \bibitem{awsrds}
-  Amazon RDS: https://aws.amazon.com/rds/
+  Amazon Inc, Amazon RDS 2023. [Online] Accessed: 2023-11-24.: https://aws.amazon.com/rds/
 
   \bibitem{awsddb}
-  Amazon DynamoDB: https://aws.amazon.com/dynamodb/
+  Amazon Inc, Amazon DynamoDB 2023. [Online] Accessed: 2023-11-24.: https://aws.amazon.com/dynamodb/
 
   \bibitem{awslambda}
-  Amazon Lambda: https://aws.amazon.com/lambda/
+  Amazon Inc, Amazon Lambda 2023. [Online] Accessed: 2023-11-24.: https://aws.amazon.com/lambda/
 
   \bibitem{awscodecommit}
-  Amazon CodeCommit: https://aws.amazon.com/codecommit/
+  Amazon Inc, Amazon CodeCommit 2023. [Online] Accessed: 2023-11-24.: https://aws.amazon.com/codecommit/
 
   \bibitem{docker}
-  Docker: https://www.docker.com
+  Docker Inc, Docker 2023. [Online] Accessed: 2023-11-24.:: https://www.docker.com
 
 
 \end{thebibliography}
 
 \end{document}
-
-
-%%drawio ábra
-%%prcie calculator
-%%improvements
