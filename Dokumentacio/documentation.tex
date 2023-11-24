@@ -6,13 +6,6 @@
 \graphicspath{ {./images/} }
 
 \begin{document}
-%%TODO: tanszék, konzulens, képzés szép kiíráasa
-%%\title{\Huge{MSc - Önálló laboratórium 2}\\Beszámoló\\Amazon Web Services}
-%%\author{\huge{Daniel Mark Kiss}}
-%%\author{\huge{Gazdaságinformatika}}
-%%\author{\huge{Távközlési és Médiainformatikai Tanszék}}
-%%\author{\huge{Konzulens: István Pelle}}
-%%\date{2023}
 \pagenumbering{arabic}
 \include{titlepage}
 
@@ -36,7 +29,7 @@ It offers a pay-as-you-go pricing model, which means users only pay for the reso
 
 As I was browsing the different topics for my thesis I have found the AWS services very interesting. I heard that AWS is a very popular opininon for its robust cloud computing solutions.
 In conclusion, the decision to explore AWS services for my thesis is driven by the platform's reputation for reliability, innovation, and global accessibility. I thought it would be a greate opportunity to famlirise myself with the different AWS services and technologies.
-This way I can also gain some experience in the cloud computing field. I have also done a course provided by Amazon. It conatains a 14 module class where they teache the fundamentals of AWS. In todays standards it is crucial to have a minimal knowledge and also exprience with one of the biggest cloud computing platform.
+This way I can also gain some experience in the cloud computing field. I have also done a course provided by Amazon. It conatains a 14 module class where they teach the fundamentals of AWS. In todays standards it is crucial to have a minimal knowledge and also exprience with one of the biggest cloud computing platform.
 
 For my project I have created a Book Tracking application.
 It has a seperate admin page where the admins can register the users and another page where the users can track their books.
@@ -47,88 +40,95 @@ For this application I have used the following AWS services and technologies: AW
 Hopefully I have used Docker, Express JS, MySQL, HTML, CSS, JavaScript, Bootstrap before so I had some experience with them.
 
 In the next chapter I will present the different AWS services and technologies I have used for my project. After that I will present the development phase of the project. In the last chapter I will present the finished application and showcase it.
-\chapter{Current AWS features and techologies}
+\chapter{Used AWS features and techologies}
 
 Before I started the development of the application I have done a course provided by Amazon. It conatains a 14 module class where they teache the fundamentals of AWS.
-It was roughly 5 weeks for me to finish and complete all laboratory exercises and module closing quiz. Throughout the course I have familiarised myself with the different AWS services and theoretical background. It proved to be a good repetition for my previous knowledge like REST API. \cite{awsacademy}
-
+It was roughly 5 weeks for me to finish and complete all laboratory exercises and module closing quiz. Throughout the course I have familiarised myself with the different AWS services and theoretical background. It proved to be a good repetition for my previous knowledge like REST API  \cite{awsacademy}.
+In the next sections I will present the different AWS services and technologies I have used for my project.
 
 \section{Amazon Elastic Compute Cloud (EC2)}
 
-This service provides resizable compute capacity in the cloud, allowing users to run virtual servers, known as "instances," for various computing tasks.
+The EC2 service \cite{awsec2} provides resizable compute capacity in the cloud, allowing users to run virtual servers, known as "instances," for various computing tasks.
 Key features:
 \begin{enumerate}
   \item Scalability: EC2 instances can be quickly scaled up or down based on demand. This means that users can add or remove instances to match the needs of their applications or workloads.
   \item Variety of Instance Types: EC2 offers a wide range of instance types optimized for different use cases. These include instances optimized for compute-intensive workloads, memory-intensive tasks, storage-optimized applications, and more.
-  \item Operating System Flexibility: Users can choose from a variety of operating systems, including various Linux distributions, Microsoft Windows, and others, to run on their EC2 instances. \cite{awsec2}
+  \item Operating System Flexibility: Users can choose from a variety of operating systems, including various Linux distributions, Microsoft Windows, and others, to run on their EC2 instances.
 \end{enumerate}
 \section{Amazon Simple Storage Service (S3)}
 
-S3 offers scalable object storage for storing and retrieving data. It is commonly used for data backup, hosting static websites, and as a storage backend for applications.
+S3 \cite{awss3} offers scalable object storage for storing and retrieving data. It is commonly used for data backup, hosting static websites, and as a storage backend for applications.
 Amazon S3 is designed to provide durability, availability, and scalability at a low cost.
 Key features:
 \begin{enumerate}
   \item Object Storage: Amazon S3 stores data as objects, which consist of a file and its associated metadata. Each object is identified by a unique key, making it easy to access and manage.
   \item Buckets: A bucket is a container for objects stored in Amazon S3. Buckets act as top-level folders or directories for organizing and managing objects. Each bucket has a unique name and is associated with a specific AWS region.
-  \item Durability and Availability: Amazon S3 is designed to provide 99.999999999% (11 9's) durability for objects over a given year. It achieves this by replicating data across multiple Availability Zones within a region, ensuring high availability.
+  \item Durability and Availability: Amazon S3 is designed to provide 99.999999999\% (11 9's) durability for objects over a given year. It achieves this by replicating data across multiple Availability Zones within a region, ensuring high availability.
   \item Scalability: Amazon S3 can scale to accommodate virtually unlimited amounts of data. Users can easily upload, store, and retrieve any amount of data, making it suitable for a wide range of use cases.
-  \item ccess Control: Users can control access to their buckets and objects through AWS Identity and Access Management (IAM) policies, bucket policies, Access Control Lists (ACLs), and signed URLs or cookies.
+  \item Access Control: Users can control access to their buckets and objects through AWS Identity and Access Management (IAM) policies, bucket policies, Access Control Lists (ACLs), and signed URLs or cookies.
   \item Cross-Region Replication: Users can configure Amazon S3 to automatically replicate objects from one bucket to another in a different AWS region. This helps achieve geographic redundancy and compliance with data residency requirements.
-  \item Static Website Hosting: Amazon S3 can be used to host static websites, providing a cost-effective solution for hosting web content. \cite{awss3}
+  \item Static Website Hosting: Amazon S3 can be used to host static websites, providing a cost-effective solution for hosting web content.
 \end{enumerate}
 
 
 \section{Amazon RDS (Relational Database Service)}
 
-RDS offers managed database services for various database engines, including MySQL, PostgreSQL, Oracle, and Microsoft SQL Server.
-Key features:
-\begin{enumerate}
-  \item Managed Service: AWS handles the heavy lifting of database administration tasks such as hardware provisioning, database setup, configuration, patch management, and backups. This allows users to focus on application development rather than database management. \cite{awsrds}
-\end{enumerate}
+RDS \cite{awsrds} offers managed database services for various database engines, including MySQL, PostgreSQL, Oracle, and Microsoft SQL Server.
+Key feature:
+
+Managed Service: AWS handles the heavy lifting of database administration tasks such as hardware provisioning, database setup, configuration, patch management, and backups. This allows users to focus on application development rather than database management.
 
 
 \section{Amazon DynamoDB}
 
-A fully-managed NoSQL database service that provides high performance and seamless scalability for applications that require low-latency access to data.
+Amazon DynamoDB \cite{awsddb} is fully-managed NoSQL database service that provides high performance and seamless scalability for applications that require low-latency access to data.
 \begin{enumerate}
   \item NoSQL Database: DynamoDB is a NoSQL database, which means it does not rely on a fixed schema like traditional relational databases. This allows for flexible data modeling, making it well-suited for applications with evolving data structures.
   \item Managed Service: AWS handles all the operational aspects of DynamoDB, including hardware provisioning, setup, configuration, and maintenance. This frees developers from the burden of database management tasks.
-  \item Scalability: DynamoDB is designed to scale easily, both in terms of read and write throughput. It can handle massive volumes of traffic and automatically scales based on demand. Users can adjust read and write capacity units to accommodate their application's needs. \cite{awsddb}
+  \item Scalability: DynamoDB is designed to scale easily, both in terms of read and write throughput. It can handle massive volumes of traffic and automatically scales based on demand. Users can adjust read and write capacity units to accommodate their application's needs.
 \end{enumerate}
 
 \section{AWS Lambda}
 
-This service allows users to run code without provisioning or managing servers. It executes code in response to specific events, making it a key component of serverless architecture.
+AWS Lambda \cite{awslambda} service allows users to run code without provisioning or managing servers. It executes code in response to specific events, making it a key component of serverless architecture.
 \begin{enumerate}
   \item Serverless Architecture: Lambda is a serverless computing service, which means developers do not need to manage the underlying servers. Instead, they write code and AWS handles the execution and scaling of that code.
   \item Event-Driven Model: Lambda functions are triggered by events such as changes to data in an Amazon S3 bucket, updates to a DynamoDB table, or incoming HTTP requests via Amazon API Gateway. This event-driven model allows for real-time responses to changes in the environment.
   \item Supported Runtimes: AWS Lambda supports multiple programming languages including Node.js, Python, Java, Go, Ruby, .NET Core, and custom runtimes.
         This flexibility enables developers to use their preferred programming language.
-  \item Pay-per-Use Pricing: With AWS Lambda, users pay only for the compute time consumed by their code. There is no charge when code is not running. This pricing model can lead to cost savings compared to traditional server-based architectures. \cite{awslambda}
+  \item Pay-per-Use Pricing: With AWS Lambda, users pay only for the compute time consumed by their code. There is no charge when code is not running. This pricing model can lead to cost savings compared to traditional server-based architectures.
 \end{enumerate}
 
 
 \section{AWS CodeCommit}
-AWS CodeCommit is a fully managed source control service provided by Amazon Web Services (AWS). It is a secure and scalable Git-based repository hosting service designed to help teams collaborate on code development and version control. CodeCommit provides a secure and reliable platform for storing and managing code repositories.
+AWS CodeCommit \cite{awscodecommit} is a fully managed source control service provided by AWS. It is a secure and scalable Git-based repository hosting service designed to help teams collaborate on code development and version control. CodeCommit provides a secure and reliable platform for storing and managing code repositories.
 
 Key features:
 \begin{enumerate}
   \item Git Repository Hosting: CodeCommit supports the Git version control system, providing a familiar interface for developers to manage their code repositories.
   \item Secure and Private: CodeCommit repositories are secure by default and can be configured to be private. Access control policies, AWS Identity and Access Management (IAM) permissions, and encryption options ensure the confidentiality and integrity of code.
-  \item Integration with AWS Services: CodeCommit seamlessly integrates with other AWS services, such as AWS CodePipeline, AWS CodeBuild, AWS CodeDeploy, AWS CloudFormation, and more. This enables end-to-end continuous integration and continuous deployment (CI/CD) workflows.
-  \item Version Control: CodeCommit allows multiple developers to collaborate on projects by providing version control capabilities. Developers can create branches, merge code changes, and track commit history. \cite{awscodecommit}
+  \item Integration with AWS Services: CodeCommit seamlessly integrates with other AWS services, such as AWS CodePipeline (is an automation pipline for code builds), AWS CodeBuild (the service which does the automatic code build), AWS CodeDeploy (the service which does the automatic deployment), and more. This enables end-to-end continuous integration and continuous deployment (CI/CD) workflows.
+  \item Version Control: CodeCommit allows multiple developers to collaborate on projects by providing version control capabilities. Developers can create branches, merge code changes, and track commit history.
 \end{enumerate}
 
+\section{Docker}
+
+Docker is a set of platform as a service (PaaS) products that use OS-level virtualization to deliver software in packages called containers. Containers are isolated from one another and bundle their own software, libraries and configuration files; they can communicate with each other through well-defined channels. All containers are run by a single operating system kernel and are thus more lightweight than virtual machines. Containers are created from images that specify their precise contents. Images are often created by combining and modifying standard images downloaded from public repositories \cite{docker}.
+
+\section{MySQL}
+MySQL is an open-source relational database management system (RDBMS). Its name is a combination of "My", the name of co-founder Michael Widenius's daughter, and "SQL", the abbreviation for Structured Query Language. A relational database organizes data into one or more data tables in which data types may be related to each other; these relations help structure the data. SQL is a language programmers use to create, modify and extract data from the relational database, as well as control user access to the database.
 
 
 \chapter{Development}
 
 \section{Overview}
-For the development phase of the project I used AWS's Cloud9 integrated developer environment(IDE) as the main developer platform for the front-end.
+For the development phase of the project I used AWS's Cloud9 integrated developer environment (IDE) as the main developer platform for the front-end.
 I have also version controled the whole development process using git and publishing it on GitHub and also Amazons Code Commit system. Not only the source code can be found there but also the documentation of this project as I have writen it using \LaTeX{}.
 The project I have created using AWS and other technologies is a Book Tracking website. It has a seperate admin page where the admins can register the users and another page where the users can track their books.
-For the books there are three state. Not started, Reading and Finished. These books are presented in a crad format and it is only visible to the users after a successful login.
+For the books there are three state. Not started, Reading and Finished. These books are presented in a card format in grid layout and it is only visible to the users after a successful login.
 To achive this I have used the following technologies:
+
+%%TODO: ábra javítása
 
 \begin{figure}[!ht]
   \centering
@@ -139,12 +139,9 @@ To achive this I have used the following technologies:
 
 \section{Docker}
 
-Docker is a set of platform as a service (PaaS) products that use OS-level virtualization to deliver software in packages called containers. Containers are isolated from one another and bundle their own software, libraries and configuration files; they can communicate with each other through well-defined channels. All containers are run by a single operating system kernel and are thus more lightweight than virtual machines. Containers are created from images that specify their precise contents. Images are often created by combining and modifying standard images downloaded from public repositories. \cite{docker}
 I used this for the admin page creation and for storing the user data in a MySQL database. I created two containers, one for the admin page and one for the database. The admin page is written in Express JS and the database is MySQL.
 
 \subsection{MySQL - User database}
-
-MySQL is an open-source relational database management system (RDBMS). Its name is a combination of "My", the name of co-founder Michael Widenius's daughter, and "SQL", the abbreviation for Structured Query Language. A relational database organizes data into one or more data tables in which data types may be related to each other; these relations help structure the data. SQL is a language programmers use to create, modify and extract data from the relational database, as well as control user access to the database.
 I have set up this database using Docker and I have created a table for the users. The table has the following columns: username, password. To create the container I first created the image, which is created from the Dockerfile. The Dockerfile I composed contains the fondamentals like it used mysql 8.2.0 and it exposes its port to 3306.
 After the creation I used the following command to update the database.
 \begin{lstlisting}[language=Python,basicstyle=\ttfamily\small,]
@@ -152,6 +149,8 @@ After the creation I used the following command to update the database.
     -> -e MYSQL_ROOT_PASSWORD=pwd -d mysql_server
   docker exec -i mysql_1 mysql -u root -ppwd < db.sql
 \end{lstlisting}
+%%TODO: folytatás
+This Docker command is used to
 After I have successfuly created the container I tagged it and pushed it to the AWS ECR(Elastic Container Registry).
 
 \begin{lstlisting}[language=Python,basicstyle=\ttfamily\small,]
